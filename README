@@ -1,0 +1,23 @@
+
+for details see kafka.apache.org
+
+Kafka is a high-throughput, distributed, publish-subscribe messaging system.
+Uses cases are Messaging, Website Activity Tracking, Metrics, Log Aggregation, Stream Processing, Event Sourcing and Commit Log. 
+
+Kafka cluster consists of one or more servers each of which is called a broker.
+Producers feed Kafka cluster with topics (messages).
+Consumers consume these topics.
+For each topic the Kafka cluster maintains a partitioned log (partition 0, partition 1, partition 2, ...)
+Each partition is an ordered, immutable sequence of messages.
+Each partition is consumed by exactly one consumer in the group.
+The messages in the partitions are each assigned a sequential id number called the offset that uniquely identifies each message within the partition. 
+Kafka provides a total order over messages within a partition.
+Per-partition ordering combined with the ability to partition data by key is sufficient for most applications. 
+In the case a total order over messages is needed this can be achieved with a topic that has only one partition. This will mean only one consumer process per consumer group. 
+
+Messaging traditionally has two models: queuing and publish-subscribe.
+Kafka generalizes these models to the consumer group.
+
+A very good tutorial can be found here:
+http://kafka.apache.org/documentation.html#quickstart
+
